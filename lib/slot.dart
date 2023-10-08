@@ -12,4 +12,8 @@ class Slot {
     required this.owner,
     this.piece,
   });
+
+  bool get isEmpty => piece == null;
+
+  bool get isNotEmpty => !isEmpty;
 }

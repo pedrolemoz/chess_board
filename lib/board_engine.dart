@@ -10,11 +10,15 @@ import 'slot.dart';
 import 'tower.dart';
 
 class BoardEngine {
-  late final List<List<Slot>> board;
+  late final List<List<Slot>> _board;
 
   BoardEngine() {
-    board = _generateBoard();
+    _board = _generateBoard();
   }
+
+  List<List<Slot>> get board => _board.toList();
+
+  Slot slotAt(int i, int j) => _board[i][j];
 
   List<List<Slot>> _generateBoard() {
     final matrix = <List<Slot>>[];

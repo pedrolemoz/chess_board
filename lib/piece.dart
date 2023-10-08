@@ -5,18 +5,19 @@ class Piece {
   final Position position;
   final Owner owner;
   final String name;
-  final String whiteImage;
-  final String blackImage;
+  final String _whiteImage;
+  final String _blackImage;
   bool inGame;
 
   Piece({
     required this.owner,
     required this.position,
     required this.name,
-    required this.whiteImage,
-    required this.blackImage,
+    required String whiteImage,
+    required String blackImage,
     this.inGame = true,
-  });
+  })  : _blackImage = blackImage,
+        _whiteImage = whiteImage;
 
-  String image() => owner == Owner.white ? whiteImage : blackImage;
+  String get image => owner.isWhite ? _whiteImage : _blackImage;
 }
